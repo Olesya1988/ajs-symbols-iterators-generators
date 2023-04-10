@@ -27,42 +27,12 @@ const zombie = {
   defence: 15,
 };
 
-const magician = {
-  name: 'Маг',
-  type: 'Magician',
-  health: 100,
-  level: 1,
-  attack: 10,
-  defence: 40,
-};
-
-const swordsman = {
-  name: 'Фехтовальщик',
-  type: 'Swordsman',
-  health: 100,
-  level: 1,
-  attack: 40,
-  defence: 10,
-};
-
-const undead = {
-  name: 'Нежить',
-  type: 'Undead',
-  health: 100,
-  level: 1,
-  attack: 25,
-  defence: 25,
-};
-
-const team = new Team([bowman, daemon, zombie, magician, swordsman, undead]);
-
 test('test of generator', () => {
+  const team = new Team([bowman, daemon, zombie]);
   const arrayOfTeam = [];
 
   for (const item of team) {
-    arrayOfTeam.push(item.next().value);
-    arrayOfTeam.push(item.next().value);
-    arrayOfTeam.push(item.next().value);
+    arrayOfTeam.push(item);
   }
 
   const correct = [

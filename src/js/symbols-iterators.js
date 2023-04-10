@@ -1,5 +1,3 @@
-import Character from './Character';
-
 export default class Team {
   constructor(persons) {
     this.persons = persons;
@@ -14,14 +12,7 @@ export default class Team {
         if (index < characters.length) {
           const count = index++;
           return {
-            value: new Character(
-              characters[count].name,
-              characters[count].type,
-              characters[count].health,
-              characters[count].level,
-              characters[count].attack,
-              characters[count].defence,
-            ),
+            value: characters[count],
             done: false,
           };
         }
